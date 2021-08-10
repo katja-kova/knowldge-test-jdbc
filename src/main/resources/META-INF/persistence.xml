@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="default-postgresPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <!-- put your entity-classes here -->
+
+        <class>de.hda.fbi.db2.stud.entity.Category</class>
+        <class>de.hda.fbi.db2.stud.entity.Question</class>
+        <!-- this must be provided -->
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="{}" />
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.user" value="user" />
+            <property name="javax.persistence.jdbc.password" value="password" />
+
+            <property name="javax.persistence.schema-generation.database.action" value="none"/>
+            <!--<property name="javax.persistence.schema-generation.database.action" value="create"/>-->
+            <!--<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
+
+            <!--<property name="eclipselink.logging.level" value="WARNING"/>
+            <property name="eclipselink.logging.exceptions" value="false"/>
+            <property name="eclipselink.logging.level.sql" value="WARNING"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+            <property name="eclipselink.logging.timestamp" value="false"/>
+            <property name="eclipselink.logging.session" value="false"/>-->
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="fbi-postgresPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <!-- put your entity-classes here -->
+            <class>de.hda.fbi.db2.stud.entity.Category</class>
+            <class>de.hda.fbi.db2.stud.entity.Question</class>
+            <class>de.hda.fbi.db2.stud.entity.Answer</class>
+            <class>de.hda.fbi.db2.stud.entity.Player</class>
+            <class>de.hda.fbi.db2.stud.entity.Game</class>
+            <!-- this must be provided -->
+            <properties>
+                <property name="javax.persistence.jdbc.url" value="{}" />
+                <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+                <property name="javax.persistence.jdbc.user" value="player" />
+                <property name="javax.persistence.jdbc.password" value="player" />
+
+                <property name="javax.persistence.schema-generation.database.action" value="none"/>
+                <!--<property name="javax.persistence.schema-generation.database.action" value="create"/>-->
+                <!--<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
+
+                <property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
+                <property name="eclipselink.jdbc.batch-writing.size" value="1000"/>
+        <property name="eclipselink.logging.level" value="WARNING"/>
+        <property name="eclipselink.logging.exceptions" value="false"/>
+        <property name="eclipselink.logging.level.sql" value="WARNING"/>
+        <property name="eclipselink.logging.parameters" value="true"/>
+        <property name="eclipselink.logging.timestamp" value="false"/>
+        <property name="eclipselink.logging.session" value="false"/>
+    </properties>
+    </persistence-unit>
+
+    <persistence-unit name="docker-local-postgresPU" transaction-type="RESOURCE_LOCAL">
+            <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+            <!-- put your entity-classes here -->
+
+            <class>de.hda.fbi.db2.stud.entity.Category</class>
+            <class>de.hda.fbi.db2.stud.entity.Question</class>
+            <!-- this must be provided -->
+            <properties>
+                <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/dbadmin" />
+                <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+                <property name="javax.persistence.jdbc.user" value="dbadmin" />
+                <property name="javax.persistence.jdbc.password" value="dbadminpassword" />
+
+                <property name="javax.persistence.schema-generation.database.action" value="none"/>
+                <!--<property name="javax.persistence.schema-generation.database.action" value="create"/>-->
+                <!--<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
+
+                <property name="eclipselink.logging.level" value="WARNING"/>
+                <property name="eclipselink.logging.exceptions" value="false"/>
+                <property name="eclipselink.logging.level.sql" value="WARNING"/>
+                <property name="eclipselink.logging.parameters" value="true"/>
+                <property name="eclipselink.logging.timestamp" value="false"/>
+                <property name="eclipselink.logging.session" value="false"/>
+            </properties>
+    </persistence-unit>
+
+    <persistence-unit name="docker-Daebler-postgresPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <!-- put your entity-classes here -->
+
+        <class>de.hda.fbi.db2.stud.entity.Category</class>
+        <class>de.hda.fbi.db2.stud.entity.Question</class>
+        <class>de.hda.fbi.db2.stud.entity.Answer</class>
+        <class>de.hda.fbi.db2.stud.entity.Player</class>
+        <class>de.hda.fbi.db2.stud.entity.Game</class>
+        <!-- this must be provided -->
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="{}" />
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.user" value="user" />
+            <property name="javax.persistence.jdbc.password" value="password" />
+
+            <property name="javax.persistence.schema-generation.database.action" value="none"/>
+            <property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
+            <property name="eclipselink.jdbc.batch-writing.size" value="1000"/>
+            <!--<property name="javax.persistence.schema-generation.database.action" value="create"/>-->
+            <!--<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
+
+            <property name="eclipselink.logging.level" value="WARNING"/>
+            <property name="eclipselink.logging.exceptions" value="false"/>
+            <property name="eclipselink.logging.level.sql" value="FINE"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+            <property name="eclipselink.logging.timestamp" value="false"/>
+            <property name="eclipselink.logging.session" value="false"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
+
